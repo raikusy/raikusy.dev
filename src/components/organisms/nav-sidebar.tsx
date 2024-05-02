@@ -18,123 +18,129 @@ import { cn } from "@/lib/utils";
 const NavSidebar = () => {
   const path = usePathname();
   return (
-    <nav className="grid items-start px-2 text-sm font-medium pl-14">
-      <div className="dark:text-gray-500 font-bold px-2">
-        <h3>WELCOME</h3>
+    <nav className="bg-gray-100 dark:bg-gray-900 w-64 border-r border-gray-200 dark:border-gray-800 overflow-y-auto sm:pl-14">
+      <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
+        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+          EXPLORER
+        </span>
       </div>
-      <div className="flex gap-2 dark:text-gray-500 font-bold border-t dark:border-gray-700 mt-2 py-2">
-        <ChevronDown />
-        <h3>RAIKUSY.DEV</h3>
+      <div className="mb-2 px-2 py-2 border-b border-gray-200 dark:border-gray-800 flex items-center">
+        <ChevronDown className="size-5" />
+        <span className="text-xs font-medium text-gray-700 dark:text-gray-300 ml-2">
+          RAIKUSY.DEV
+        </span>
       </div>
-      <div className="p-4 space-y-2 dark:border-gray-700">
+      <div className="ml-3 dark:border-gray-700">
         <Link
           className={cn(
-            `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary ${
+            `flex items-center space-x-2 px-2 py-2 text-sm font-medium hover:underline ${
               path === PAGES.HOME
-                ? "bg-muted text-primary"
-                : "text-muted-foreground"
+                ? "text-primary"
+                : "hover:text-primary text-muted-foreground"
             }`
           )}
           href={PAGES.HOME}
         >
-          <HomeIcon className="h-5 w-5" />
+          <FileIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
           <span>Home.tsx</span>
         </Link>
         <Link
           className={cn(
-            `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary ${
+            `flex items-center space-x-2 px-2 py-2 text-sm font-medium hover:underline ${
               path === PAGES.BLOG
-                ? "bg-muted text-primary"
-                : "text-muted-foreground"
+                ? "text-primary"
+                : "hover:text-primary text-muted-foreground"
             }`
           )}
           href={PAGES.BLOG}
         >
-          <FileIcon className="h-5 w-5" />
+          <FileIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
           <span>Blog.tsx</span>
         </Link>
         <Link
           className={cn(
-            `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary ${
+            `flex items-center space-x-2 px-2 py-2 text-sm font-medium hover:underline ${
               path === PAGES.ABOUT
-                ? "bg-muted text-primary"
-                : "text-muted-foreground"
+                ? "text-primary"
+                : "hover:text-primary text-muted-foreground"
             }`
           )}
           href={PAGES.ABOUT}
         >
-          <UserIcon className="h-5 w-5" />
+          <FileIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
           <span>About.tsx</span>
         </Link>
         <Link
           className={cn(
-            `flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary ${
+            `flex items-center space-x-2 px-2 py-2 text-sm font-medium hover:underline ${
               path === PAGES.CONTACT
-                ? "bg-muted text-primary"
-                : "text-muted-foreground"
+                ? "text-primary"
+                : "hover:text-primary text-muted-foreground"
             }`
           )}
           href={PAGES.CONTACT}
         >
-          <ContactIcon className="h-5 w-5" />
+          <FileIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
           <span>Contact.tsx</span>
         </Link>
       </div>
       {path === PAGES.BLOG && (
         <>
-          <div className="flex gap-2 dark:text-gray-500 font-bold border-t dark:border-gray-700 mt-4 py-2">
-            <ChevronDown />
-            <h3>CATEGORIES</h3>
+          <div className="my-2 px-2 py-2 border-b border-gray-200 dark:border-gray-800 flex items-center">
+            <ChevronDown className="size-5" />
+            <span className="text-xs font-medium text-gray-700 dark:text-gray-300 ml-2">
+              CATEGORIES
+            </span>
           </div>
-          <div className="px-4 space-y-2 dark:border-gray-700">
+          <div className="px-4 dark:border-gray-700">
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>React.js (7)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>Next.js (4)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>Typescript (2)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>Nest.js (5)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>Docker (2)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>DevOps (1)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
             <Link
               href="#"
-              className="group flex items-center gap-2 hover:underline"
+              className="group flex items-center justify-between px-2 py-2 text-sm font-medium hover:underline hover:text-primary text-muted-foreground"
             >
-              <ChevronDown className="transition-all rotate-0 group-hover:-rotate-90" />
               <span>Terraform (2)</span>
+              <ChevronRight className="h-4 w-4 text-gray-500 dark:text-gray-400" />
             </Link>
           </div>
         </>

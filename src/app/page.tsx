@@ -29,31 +29,31 @@ export default function Home() {
               <TypescriptIcon className="h-6 w-6" />
               TypeScript
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <ReactIcon className="h-6 w-6" />
               React
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <NextjsIcon className="h-6 w-6" />
               Next.js
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <NodejsIcon className="h-6 w-6" />
               Node.js
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <NestjsIcon className="h-6 w-6" />
               Nest.js
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <PostgresIcon className="h-6 w-6" />
               PostgreSQL
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <MongodbIcon className="h-6 w-6" />
               MongoDB
             </div>
-            <div className="rounded-md bg-gray-200 px-4 py-2 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2">
+            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
               <AwsIcon className="h-6 w-6" />
               AWS
             </div>
