@@ -5,6 +5,10 @@ import {
   FileIcon,
   FolderIcon,
   GitBranchIcon,
+  GithubIcon,
+  HomeIcon,
+  LinkedinIcon,
+  MailIcon,
   SearchIcon,
   SettingsIcon,
 } from "lucide-react";
@@ -14,24 +18,24 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const icons = [
   {
-    icon: FileIcon,
+    icon: HomeIcon,
     href: "/",
-    label: "Files",
+    label: "Home",
   },
   {
-    icon: SearchIcon,
-    href: "/search",
-    label: "Search",
+    icon: GithubIcon,
+    href: "https://github.com/raikusy",
+    label: "Github",
   },
   {
-    icon: GitBranchIcon,
-    href: "/git",
-    label: "Source Control",
+    icon: LinkedinIcon,
+    href: "https://www.linkedin.com/in/raikusy/",
+    label: "Linkedin",
   },
   {
-    icon: SettingsIcon,
-    href: "/settings",
-    label: "Settings",
+    icon: MailIcon,
+    href: "mailto:raikusy@gmail.com",
+    label: "Email",
   },
 ];
 
@@ -47,6 +51,7 @@ export function IconSidebar() {
             <TooltipTrigger asChild>
               <Link
                 href={href}
+                target={href.includes("https") ? "_blank" : undefined}
                 className={cn(
                   "flex w-full h-12 p-2 rounded-md items-center justify-center text-muted-foreground hover:text-foreground hover:bg-hover transition-all duration-150 ease-out",
                   isActive && "bg-active text-foreground"

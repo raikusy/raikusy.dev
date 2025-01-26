@@ -69,6 +69,12 @@ const files: FileItem[] = [
             path: "/blog",
           },
           {
+            name: "projects.tsx",
+            type: "link",
+            icon: <ReactIcon />,
+            path: "/projects",
+          },
+          {
             name: "contact.tsx",
             type: "link",
             icon: <ReactIcon />,

@@ -29,6 +29,11 @@ const tabs: Tab[] = [
     icon: <ReactIcon />,
   },
   {
+    name: "projects.tsx",
+    path: "/projects",
+    icon: <ReactIcon />,
+  },
+  {
     name: "contact.tsx",
     path: "/contact",
     icon: <ReactIcon />,
