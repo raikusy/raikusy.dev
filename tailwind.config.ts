@@ -24,6 +24,13 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        hover: {
+          DEFAULT: "hsl(var(--hover))",
+        },
+        active: {
+          DEFAULT: "hsl(var(--active))",
+          hover: "hsl(var(--active-hover))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -207,6 +214,18 @@ const config = {
             transform: "translateY(-88.88%)",
           },
         },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "slide-in-from-left": {
+          "0%": { transform: "translateX(-10%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "slide-in-from-bottom": {
+          "0%": { transform: "translateY(10%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -225,6 +244,9 @@ const config = {
           "text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
         "text-slide-8":
           "text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "fade-in": "fade-in 0.5s ease-in-out forwards",
+        "slide-in-from-left": "slide-in-from-left 0.5s ease-out forwards",
+        "slide-in-from-bottom": "slide-in-from-bottom 0.5s ease-out forwards",
       },
     },
   },

@@ -6,56 +6,82 @@ import NodejsIcon from "@/components/icons/nodejs-icon";
 import PostgresIcon from "@/components/icons/postgres-icon";
 import ReactIcon from "@/components/icons/react-icon";
 import TypescriptIcon from "@/components/icons/typescript-icon";
+import { LineNumbers } from "@/components/organisms/line-numbers";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const skills = [
+  { icon: TypescriptIcon, name: "TypeScript" },
+  { icon: ReactIcon, name: "React" },
+  { icon: NextjsIcon, name: "Next.js" },
+  { icon: NodejsIcon, name: "Node.js" },
+  { icon: NestjsIcon, name: "Nest.js" },
+  { icon: PostgresIcon, name: "PostgreSQL" },
+  { icon: MongodbIcon, name: "MongoDB" },
+  { icon: AwsIcon, name: "AWS" },
+];
 
 export default function Home() {
   return (
-    <div className="flex-1 bg-gray-100 p-8 dark:bg-gray-800">
-      <div className="mx-auto max-w-3xl space-y-8">
-        <div className="space-y-2">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white">
-            MD Rakibul Hasan
-          </h1>
-          <h2 className="text-3xl font-medium text-gray-600 dark:text-gray-400">
-            Full-stack Developer
-          </h2>
-        </div>
-        <div className="space-y-4">
-          <h3 className="text-2xl font-medium text-gray-900 dark:text-white">
-            Skills
-          </h3>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <TypescriptIcon className="h-6 w-6" />
-              TypeScript
+    <div className="flex-1 min-h-full">
+      <div className="flex-1 min-h-full font-mono">
+        <div className="flex rounded-lg bg-card">
+          <LineNumbers lines={20} />
+
+          <div className="space-y-6 pl-8">
+            <div className="space-y-2">
+              <span className="text-blue-400">import</span>
+              <span className="text-purple-400">{` { Developer } `}</span>
+              <span className="text-blue-400"> from </span>
+              <span className="text-orange-400">
+                &quot;https://github.com/raikusy&quot;
+              </span>
+              <span className="text-muted-foreground">;</span>
             </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <ReactIcon className="h-6 w-6" />
-              React
+
+            <div className="space-y-2">
+              <span className="text-blue-400">const </span>
+              <span className="text-purple-400">name </span>
+              <span className="text-muted-foreground">= </span>
+              <span className="text-orange-400">
+                &quot;MD Rakibul Hasan&quot;
+              </span>
+              <span className="text-muted-foreground">;</span>
             </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <NextjsIcon className="h-6 w-6" />
-              Next.js
+
+            <div className="space-y-2">
+              <span className="text-blue-400">const </span>
+              <span className="text-purple-400">role </span>
+              <span className="text-muted-foreground">= </span>
+              <span className="text-orange-400">
+                &quot;Full-stack Developer&quot;
+              </span>
+              <span className="text-muted-foreground">;</span>
             </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <NodejsIcon className="h-6 w-6" />
-              Node.js
-            </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <NestjsIcon className="h-6 w-6" />
-              Nest.js
-            </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <PostgresIcon className="h-6 w-6" />
-              PostgreSQL
-            </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <MongodbIcon className="h-6 w-6" />
-              MongoDB
-            </div>
-            <div className="rounded-md bg-gray-200 px-6 py-3 text-gray-900 dark:bg-gray-700 dark:text-gray-200 flex gap-2 transition-all hover:bg-slate-300 hover:cursor-pointer border border-gray-200 hover:border-slate-500 duration-500">
-              <AwsIcon className="h-6 w-6" />
-              AWS
+
+            <div className="space-y-4">
+              <div>
+                <span className="text-blue-400">const </span>
+                <span className="text-purple-400">skills </span>
+                <span className="text-muted-foreground">= [</span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 pl-4 sm:grid-cols-3 md:grid-cols-4">
+                {skills.map(({ icon: Icon, name }, index) => (
+                  <div
+                    key={name}
+                    className={cn(
+                      "flex cursor-pointer items-center gap-2 rounded-md border border-transparent bg-muted/50 px-4 py-2 text-sm",
+                      "transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-muted hover:shadow-lg"
+                    )}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span>{name}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-muted-foreground">];</div>
             </div>
           </div>
         </div>
