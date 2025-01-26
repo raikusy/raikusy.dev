@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRightIcon, CalendarFold } from "lucide-react";
-import { Post } from "@/app/server/posts";
+import { Post } from "@/server/posts";
 import dayjs from "dayjs";
 import { cn } from "@/lib/utils";
 

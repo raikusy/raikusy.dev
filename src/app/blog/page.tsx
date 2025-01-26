@@ -1,4 +1,4 @@
-import { getPosts } from "../server/posts";
+import { getPosts } from "../../server/posts";
 import ArticleCard from "@/components/organisms/article-card";
 import { LineNumbers } from "@/components/organisms/line-numbers";
 import { cn } from "@/lib/utils";
