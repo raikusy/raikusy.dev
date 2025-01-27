@@ -1,4 +1,3 @@
-import { LineNumbers } from "@/components/organisms/line-numbers";
 import { cn } from "@/lib/utils";
 import { Github, Globe } from "lucide-react";
 import Image from "next/image";

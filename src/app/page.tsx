@@ -79,7 +79,7 @@ export default function Home() {
           "[",
           <div
             key="skills"
-            className="grid grid-cols-2 gap-2 md:grid-cols-4 my-2"
+            className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4 my-2"
           >
             {skills.map(({ name, icon: Icon }) => (
               <Skill key={name} name={name} icon={Icon} />
@@ -98,8 +98,9 @@ export default function Home() {
     ],
     []
   );
+
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 w-full max-w-full sm:max-w-2xl md:max-w-4xl">
       {codes.map(({ tokens, classNames }, index) => (
         <div key={index}>
           {tokens.map((token, index) => (

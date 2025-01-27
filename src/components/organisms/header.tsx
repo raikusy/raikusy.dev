@@ -1,8 +1,8 @@
 "use client";
 
 import { SearchIcon } from "lucide-react";
-import { BashIcon } from "../icons/bash-icon";
 import { useState } from "react";
+import { BashIcon } from "@/components/icons/bash-icon";
 
 export function Header() {
   const [search, setSearch] = useState("");
@@ -15,7 +15,7 @@ export function Header() {
   // }, 1000);
 
   return (
-    <header className="flex h-12 items-center px-4 gap-8">
+    <header className="flex min-h-12 items-center px-4 gap-8">
       <div className="flex items-center gap-2">
         <div className="h-3 w-3 rounded-full bg-red-500" />
         <div className="h-3 w-3 rounded-full bg-yellow-500" />

@@ -1,4 +1,3 @@
-import { LineNumbers } from "@/components/organisms/line-numbers";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AtSign, Github, Linkedin, Mail, MessageSquare } from "lucide-react";
@@ -26,7 +25,7 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <div>
+    <div className="max-w-4xl">
       {/* Contact Form Section */}
       <div className="space-y-2">
         <span className="text-blue-400">const </span>
@@ -36,7 +35,7 @@ export default function Contact() {
         <span className="text-muted-foreground">{"{"}</span>
       </div>
 
-      <div className="pl-4 space-y-6 max-w-3xl">
+      <div className="pl-4 space-y-6">
         <form className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">

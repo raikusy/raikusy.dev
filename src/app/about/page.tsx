@@ -1,4 +1,3 @@
-import { LineNumbers } from "@/components/organisms/line-numbers";
 import { cn } from "@/lib/utils";
 
 const experiences = [
@@ -85,7 +84,7 @@ const education = [
 
 export default function About() {
   return (
-    <div className="w-full">
+    <div className="max-w-4xl">
       {/* Introduction Section */}
       <div className="space-y-2">
         <span className="text-blue-400">const </span>

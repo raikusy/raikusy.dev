@@ -1,5 +1,4 @@
 import { Markdown } from "@/components/organisms/markdown";
-import { cn } from "@/lib/utils";
 import { getPostBySlug } from "@/server/posts";
 import dayjs from "dayjs";
 import { CalendarFold } from "lucide-react";

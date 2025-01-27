@@ -1,14 +1,13 @@
-import { getPosts } from "../../server/posts";
 import ArticleCard from "@/components/organisms/article-card";
-import { LineNumbers } from "@/components/organisms/line-numbers";
 import { cn } from "@/lib/utils";
+import { getPosts } from "@/server/posts";
 
 export default async function Blog() {
   const posts = await getPosts();
 
   return (
     <>
-      <div className="space-y-2">
+      <div className="space-y-2 max-w-4xl">
         {/* Blog Section */}
         <div className="space-y-2">
           <span className="text-blue-400">const </span>
@@ -25,14 +24,13 @@ export default async function Blog() {
             <span className="text-muted-foreground">= [</span>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 pl-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col gap-8">
             {posts.map((post) => (
               <div
                 key={post.id}
                 className={cn(
                   "rounded-lg border border-transparent",
-                  "bg-muted/50 hover:border-primary hover:bg-muted",
-                  "transition-all duration-300"
+                  "bg-muted/50 hover:border-primary hover:bg-muted"
                 )}
               >
                 <ArticleCard post={post} />

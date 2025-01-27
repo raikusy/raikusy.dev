@@ -43,7 +43,7 @@ export function IconSidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-full w-16 flex-col p-2 gap-2">
+    <div className="hidden md:flex h-full w-16 flex-col p-2 gap-2">
       {icons.map(({ icon: Icon, href, label }) => {
         const isActive = pathname === href;
         return (

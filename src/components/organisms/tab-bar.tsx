@@ -44,30 +44,28 @@ export function TabBar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center">
-      <div className="flex h-full items-center justify-center gap-2 p-2">
-        {tabs.map((tab) => {
-          const isActive = pathname === tab.path;
-          return (
-            <Link
-              key={tab.path}
-              href={tab.path}
-              className={cn(
-                "flex py-2 h-full min-w-[140px] items-center gap-2 justify-center rounded-md hover:bg-hover",
-                isActive &&
-                  "bg-background text-foreground hover:bg-active-hover"
-              )}
-            >
-              {tab.icon}
-              <span className="truncate">{tab.name}</span>
-              <X
-                size={16}
-                className="ml-auto hidden text-[#969696] hover:text-[#e1e1e1] group-hover:block"
-              />
-            </Link>
-          );
-        })}
-      </div>
+    <div className="flex w-full items-center gap-2 p-2 text-sm md:text-base">
+      {tabs.map((tab) => {
+        const isActive = pathname === tab.path;
+        return (
+          <Link
+            key={tab.path}
+            href={tab.path}
+            className={cn(
+              "flex py-2 h-full min-w-[140px] items-center gap-2 justify-center rounded-md hover:bg-hover",
+              isActive &&
+                "bg-background text-foreground hover:bg-active-hover font-bold"
+            )}
+          >
+            {tab.icon}
+            <span className="truncate">{tab.name}</span>
+            <X
+              size={16}
+              className="ml-auto hidden text-[#969696] hover:text-[#e1e1e1] group-hover:block"
+            />
+          </Link>
+        );
+      })}
     </div>
   );
 }

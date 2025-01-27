@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-
 export function LineNumbers({ lines = 24 }: { lines?: number }) {
   return (
     <div className="flex h-full flex-col items-center border-r border-muted p-4 space-y-2 text-muted-foreground">

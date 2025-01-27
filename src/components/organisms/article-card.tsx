@@ -9,15 +9,15 @@ import { cn } from "@/lib/utils";
 
 const ArticleCard = ({ post }: { post: Post }) => {
   return (
-    <div className="overflow-hidden rounded-md h-full flex flex-col">
-      <div className="relative h-48 w-full overflow-hidden">
+    <div className="overflow-hidden rounded-md w-full flex h-48">
+      <div className="relative h-48 w-64 overflow-hidden">
         <Image
           alt={post.title}
           className="object-cover"
           fill
           src={
             post.coverImage?.url ??
-            `https://placehold.co/600x400.webp?text=raikusy.dev`
+            `https://placehold.co/600x400.webp?text=${post.title}`
           }
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -25,7 +25,7 @@ const ArticleCard = ({ post }: { post: Post }) => {
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold mb-2">
           <Link
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary hover:underline transition-colors"
             href={`/blog/${post.slug}`}
           >
             {post.title}
@@ -44,7 +44,7 @@ const ArticleCard = ({ post }: { post: Post }) => {
         <Link
           className={cn(
             "inline-flex items-center text-primary",
-            "hover:text-primary/90 transition-colors"
+            "hover:text-primary/90 hover:underline transition-colors"
           )}
           href={`/blog/${post.slug}`}
         >

@@ -178,7 +178,8 @@ function LinkItem({
       <Link
         className={cn(
           "flex cursor-pointer items-center gap-1 py-1 rounded-md hover:bg-hover",
-          isActive && "bg-background text-foreground hover:bg-active-hover",
+          isActive &&
+            "bg-background text-foreground hover:bg-active-hover font-bold",
           level > 0 && "ml-4"
         )}
         onClick={() => hasChildren && setIsOpen(!isOpen)}
@@ -193,7 +194,8 @@ function LinkItem({
     <div
       className={cn(
         "flex cursor-pointer items-center gap-1 py-1 rounded-md hover:bg-hover",
-        isActive && "bg-background text-foreground hover:bg-active-hover",
+        isActive &&
+          "bg-background text-foreground hover:bg-active-hover font-bold",
         level > 0 && "ml-4"
       )}
       onClick={() => hasChildren && setIsOpen(!isOpen)}
@@ -206,7 +208,7 @@ function LinkItem({
 
 export function NavSidebar() {
   return (
-    <div className="flex h-full w-60 flex-col rounded-md overflow-hidden mr-2 bg-card text-card-foreground">
+    <div className="hidden md:flex h-full w-60 flex-col rounded-md overflow-hidden mr-2 bg-card text-card-foreground">
       <div className="flex items-center justify-between px-4 py-2 text-sm">
         <span className="font-medium">EXPLORER</span>
       </div>

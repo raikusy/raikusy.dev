@@ -12,6 +12,10 @@ export interface Post {
   slug: string;
   title: string;
   brief: string;
+  content: {
+    markdown: string;
+    html: string;
+  };
   tags: Array<{
     name: string;
     slug: string;

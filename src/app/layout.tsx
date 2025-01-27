@@ -1,7 +1,7 @@
-import { DM_Sans } from "next/font/google";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
 import { ClientLayout } from "@/components/layouts/client-layout";
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -32,7 +32,7 @@ export default function RootLayout({
       <body
         className={cn(
           dmSans.className,
-          "bg-background text-foreground antialiased"
+          "bg-background text-foreground antialiased flex flex-1 h-screen overflow-y-hidden"
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
