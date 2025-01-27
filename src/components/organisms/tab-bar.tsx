@@ -44,7 +44,7 @@ export function TabBar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-12 items-center">
+    <div className="flex items-center">
       <div className="flex h-full items-center justify-center gap-2 p-2">
         {tabs.map((tab) => {
           const isActive = pathname === tab.path;
@@ -53,8 +53,9 @@ export function TabBar() {
               key={tab.path}
               href={tab.path}
               className={cn(
-                "flex h-full min-w-[140px] items-center gap-2 justify-center rounded-md m-2",
-                isActive && "bg-background text-foreground"
+                "flex py-2 h-full min-w-[140px] items-center gap-2 justify-center rounded-md hover:bg-hover",
+                isActive &&
+                  "bg-background text-foreground hover:bg-active-hover"
               )}
             >
               {tab.icon}

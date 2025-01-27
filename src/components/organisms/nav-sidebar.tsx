@@ -177,8 +177,8 @@ function LinkItem({
     return (
       <Link
         className={cn(
-          "flex cursor-pointer items-center gap-1 py-1 rounded-md",
-          isActive && "bg-background text-foreground",
+          "flex cursor-pointer items-center gap-1 py-1 rounded-md hover:bg-hover",
+          isActive && "bg-background text-foreground hover:bg-active-hover",
           level > 0 && "ml-4"
         )}
         onClick={() => hasChildren && setIsOpen(!isOpen)}
@@ -192,8 +192,8 @@ function LinkItem({
   return (
     <div
       className={cn(
-        "flex cursor-pointer items-center gap-1 py-1 rounded-md",
-        isActive && "bg-background text-foreground",
+        "flex cursor-pointer items-center gap-1 py-1 rounded-md hover:bg-hover",
+        isActive && "bg-background text-foreground hover:bg-active-hover",
         level > 0 && "ml-4"
       )}
       onClick={() => hasChildren && setIsOpen(!isOpen)}
@@ -210,7 +210,7 @@ export function NavSidebar() {
       <div className="flex items-center justify-between px-4 py-2 text-sm">
         <span className="font-medium">EXPLORER</span>
       </div>
-      <div className="flex-1 overflow-auto px-2">
+      <div className="flex-1 px-2">
         {files.map((file) => (
           <FileTreeItem key={file.path} item={file} />
         ))}

@@ -19,3 +19,14 @@ export const env = createEnv({
   //   NEXT_PUBLIC_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_PUBLISHABLE_KEY,
   // }
 });
+
+class Developer {
+  public name: string = "John";
+  public age: number = 30;
+  public skills: string[] = ["JavaScript", "TypeScript", "React", "Next.js"];
+}
+
+const developer = new Developer();
+
+developer.name = "Jane";
+developer.skills = ["Javascript"];

@@ -22,8 +22,8 @@ export function Header() {
         <div className="h-3 w-3 rounded-full bg-green-500" />
       </div>
       <div className="flex items-center gap-2">
-        <BashIcon className="h-8 w-8 text-foreground" />
-        <span className="text-lg font-bold">MD Rakibul Hasan</span>
+        <BashIcon className="h-7 w-7 text-foreground" />
+        <span className="text-lg font-bold">raikusy.dev</span>
       </div>
       <div className="flex items-center justify-center px-4">
         <div className="flex h-9 w-96 items-center gap-2 rounded-md px-4 text-sm hover:bg-hover hover:text-card-foreground transition-all duration-300">

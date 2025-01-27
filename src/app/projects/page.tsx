@@ -55,94 +55,84 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="flex-1 min-h-full">
-      <div className="flex-1 min-h-full font-mono">
-        <div className="flex rounded-lg bg-card">
-          <LineNumbers lines={40} />
-
-          <div className="space-y-8 pl-8 py-4 w-full">
-            {/* Projects Section */}
-            <div className="space-y-2">
-              <span className="text-blue-400">const </span>
-              <span className="text-purple-400">projects </span>
-              <span className="text-muted-foreground">= [</span>
-            </div>
-
-            <div className="pl-4 space-y-6">
-              {projects.map((project, index) => (
-                <div
-                  key={project.title}
-                  className={cn(
-                    "rounded-lg border border-transparent overflow-hidden",
-                    "bg-muted/50 hover:border-primary hover:bg-muted",
-                    "transition-all duration-300"
-                  )}
-                >
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="relative h-48 w-full md:h-full">
-                      <Image
-                        alt={project.title}
-                        className="object-cover"
-                        fill
-                        src={project.image}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                    <div className="p-6 space-y-4">
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      <p className="text-muted-foreground">
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex gap-4">
-                        <Link
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cn(
-                            "flex items-center gap-2",
-                            "text-muted-foreground hover:text-primary",
-                            "transition-colors"
-                          )}
-                        >
-                          <Github className="w-4 h-4" />
-                          <span>Source</span>
-                        </Link>
-                        <Link
-                          href={project.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={cn(
-                            "flex items-center gap-2",
-                            "text-muted-foreground hover:text-primary",
-                            "transition-colors"
-                          )}
-                        >
-                          <Globe className="w-4 h-4" />
-                          <span>Live Demo</span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-muted-foreground">];</div>
-          </div>
-        </div>
+    <div>
+      {/* Projects Section */}
+      <div className="space-y-2">
+        <span className="text-blue-400">const </span>
+        <span className="text-purple-400">projects </span>
+        <span className="text-muted-foreground">= [</span>
       </div>
+
+      <div className="pl-4 space-y-4 max-w-4xl my-4">
+        {projects.map((project, index) => (
+          <div
+            key={project.title}
+            className={cn(
+              "rounded-lg border border-transparent overflow-hidden",
+              "bg-muted/50 hover:border-primary hover:bg-muted",
+              "transition-all duration-300"
+            )}
+          >
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="relative h-48 w-full md:h-full">
+                <Image
+                  alt={project.title}
+                  className="object-cover"
+                  fill
+                  src={project.image}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-bold">{project.title}</h3>
+                <p className="text-muted-foreground">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs rounded-md bg-primary/10 text-primary"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  <Link
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center gap-2",
+                      "text-muted-foreground hover:text-primary",
+                      "transition-colors"
+                    )}
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>Source</span>
+                  </Link>
+                  <Link
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      "flex items-center gap-2",
+                      "text-muted-foreground hover:text-primary",
+                      "transition-colors"
+                    )}
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>Live Demo</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-muted-foreground">];</div>
     </div>
   );
 }
