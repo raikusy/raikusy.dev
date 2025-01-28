@@ -24,7 +24,14 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
             <TabBar />
             <main className="flex flex-1 overflow-hidden font-mono text-xs md:text-base w-full h-full">
               <LineNumbers />
-              <section className="flex-1 p-4 overflow-auto w-full h-full">
+              <section
+                className="flex-1 p-4 overflow-auto w-full h-full 
+              [&::-webkit-scrollbar]:w-1
+              [&::-webkit-scrollbar-track]:rounded-full
+              [&::-webkit-scrollbar-track]:bg-background
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              [&::-webkit-scrollbar-thumb]:bg-active"
+              >
                 {children}
               </section>
             </main>

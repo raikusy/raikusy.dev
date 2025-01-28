@@ -79,7 +79,7 @@ export default function Home() {
           "[",
           <div
             key="skills"
-            className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4 my-2"
+            className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-4 my-2 pl-4"
           >
             {skills.map(({ name, icon: Icon }) => (
               <Skill key={name} name={name} icon={Icon} />
