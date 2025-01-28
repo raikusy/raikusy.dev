@@ -30,15 +30,15 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const repo = await fetch(`https://api.github.com/repos/raikusy/raikusy.dev`, {
-  //   headers: {
-  //     Accept: "application/vnd.github+json",
-  //     Authorization: `Bearer ${serverEnv.GITHUB_TOKEN}`,
-  //     "X-GitHub-Api-Version": "2022-11-28",
-  //   },
-  // });
-  // const data = await repo.json();
-  // const stars = data?.stargazers_count ?? 0;
+  const repo = await fetch(`https://api.github.com/repos/raikusy/raikusy.dev`, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${serverEnv.GITHUB_TOKEN}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  });
+  const data = await repo.json();
+  const stars = data?.stargazers_count ?? 0;
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -50,7 +50,7 @@ export default async function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Suspense>
-            <ClientLayout>{children}</ClientLayout>
+            <ClientLayout stars={stars}>{children}</ClientLayout>
           </Suspense>
         </ThemeProvider>
       </body>
