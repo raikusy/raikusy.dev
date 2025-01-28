@@ -49,9 +49,7 @@ export default async function RootLayout({
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <Suspense>
-            <ClientLayout stars={stars}>{children}</ClientLayout>
-          </Suspense>
+          <ClientLayout stars={stars}>{children}</ClientLayout>
         </ThemeProvider>
       </body>
     </html>
