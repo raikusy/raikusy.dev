@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { submitContactForm } from "@/server/contact";
 import { AtSign, Github, Linkedin, Mail, MessageSquare } from "lucide-react";
+import { useFormState } from "react-dom";
 
 const socialLinks = [
   {
@@ -24,6 +28,11 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const [formState, formAction] = useFormState(submitContactForm, {
+    message: "",
+    errors: {},
+  });
+
   return (
     <div className="max-w-4xl">
       {/* Contact Form Section */}
@@ -36,7 +45,7 @@ export default function Contact() {
       </div>
 
       <div className="pl-4 space-y-6">
-        <form className="space-y-4">
+        <form className="space-y-4" action={formAction}>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm text-muted-foreground">
@@ -44,6 +53,8 @@ export default function Contact() {
                 Name
               </label>
               <input
+                required
+                name="name"
                 type="text"
                 className={cn(
                   "w-full px-4 py-2 rounded-md bg-background",
@@ -59,6 +70,8 @@ export default function Contact() {
                 Email
               </label>
               <input
+                required
+                name="email"
                 type="email"
                 className={cn(
                   "w-full px-4 py-2 rounded-md bg-background",
@@ -76,6 +89,8 @@ export default function Contact() {
               Message
             </label>
             <textarea
+              required
+              name="message"
               className={cn(
                 "w-full px-4 py-2 rounded-md bg-background",
                 "border border-border focus:border-primary",
@@ -86,7 +101,14 @@ export default function Contact() {
             />
           </div>
 
+          {formState.message && (
+            <div className="text-sm text-muted-foreground">
+              {formState.message}
+            </div>
+          )}
+
           <Button
+            type="submit"
             className={cn(
               "w-full bg-primary text-primary-foreground",
               "hover:bg-primary/90"

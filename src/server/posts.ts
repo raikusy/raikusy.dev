@@ -1,6 +1,6 @@
 "use server";
 
-import { env } from "@/env";
+import { serverEnv } from "@/env/server";
 import { query } from "@/lib/hashnode";
 
 export interface Post {
@@ -57,7 +57,7 @@ export async function getPosts() {
       }
     `,
     variables: {
-      host: env.HASHNODE_HOST,
+      host: serverEnv.HASHNODE_HOST,
     },
   });
   const posts: Array<Post> =
@@ -90,7 +90,7 @@ export async function getPostBySlug(slug: string) {
       }
     `,
     variables: {
-      host: env.HASHNODE_HOST,
+      host: serverEnv.HASHNODE_HOST,
       slug,
     },
   });

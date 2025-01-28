@@ -2,7 +2,8 @@ import { fileURLToPath } from "node:url";
 import createJiti from "jiti";
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
-jiti("./src/env");
+jiti("./src/env/server");
+jiti("./src/env/client");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,6 +19,7 @@ const nextConfig = {
       },
     ],
   },
+  transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
 };
 
 export default nextConfig;

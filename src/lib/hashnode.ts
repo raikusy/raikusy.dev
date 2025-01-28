@@ -1,4 +1,4 @@
-import { env } from "@/env";
+import { serverEnv } from "@/env/server";
 
 interface Query {
   query: string;
@@ -7,11 +7,11 @@ interface Query {
 }
 
 export async function query({ query, variables, tags }: Query) {
-  const data = await fetch(env.HASHNODE_GQL, {
+  const data = await fetch(serverEnv.HASHNODE_GQL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${env.HASHNODE_TOKEN}`,
+      Authorization: `${serverEnv.HASHNODE_TOKEN}`,
     },
     body: JSON.stringify({
       query,
