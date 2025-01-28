@@ -20,6 +20,9 @@ export async function query({ query, variables, tags }: Query) {
     next: {
       tags,
     },
-  }).then((r) => r.json());
+  })
+    .then((r) => r.json())
+    .catch((e) => console.error(e));
+
   return data;
 }

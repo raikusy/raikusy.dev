@@ -7,12 +7,18 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Header } from "../organisms/header";
 import { LineNumbers } from "../organisms/line-numbers";
 
-export function ClientLayout({ children }: { children: React.ReactNode }) {
+export function ClientLayout({
+  children,
+  stars,
+}: {
+  children: React.ReactNode;
+  stars: number;
+}) {
   return (
     <TooltipProvider>
       <div className="flex min-h-screen flex-col flex-1">
         {/* Header */}
-        <Header />
+        <Header stars={stars} />
 
         {/* Main */}
         <div className="flex flex-1 h-full w-full">

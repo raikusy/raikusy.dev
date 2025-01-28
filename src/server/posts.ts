@@ -23,46 +23,102 @@ export interface Post {
   }>;
 }
 
-export async function getPosts() {
-  const {
-    data: { publication },
-  } = await query({
+export interface SearchPostResponse {
+  data: {
+    edges: Array<{
+      node: Post;
+      cursor: string;
+    }>;
+    pageInfo: {
+      hasNextPage: boolean;
+      endCursor: string;
+    };
+  };
+}
+
+export interface PostFilters {
+  query?: string;
+  tags?: Array<string>;
+  cursor?: string;
+}
+
+export async function getPosts(filter: PostFilters = {}) {
+  const publicationId = serverEnv.HASHNODE_PUBLICATION_ID;
+
+  const variables: Record<string, any> = {
+    first: 10,
+    sortBy: "DATE_PUBLISHED_DESC",
+    filter: {
+      publicationId,
+      query: filter.query ?? "",
+    },
+  };
+
+  if (filter.cursor) {
+    variables.after = filter.cursor;
+  }
+
+  if (filter.query) {
+    variables.filter = {
+      ...variables.filter,
+      query: filter.query,
+    };
+  }
+
+  if (filter.tags) {
+    variables.filter = {
+      ...variables.filter,
+      tags: filter.tags,
+    };
+  }
+
+  const { data } = await query({
     query: `
-      query Posts($host: String!) {
-        publication(host: $host) {
-          posts(first: 10) {
-            edges {
-              node {
-                coverImage {
-                  url
-                }
-                id
-                publishedAt
+      query SearchPostsOfPublication($first: Int!, $after: String, $sortBy: PostSortBy, $filter: SearchPostsOfPublicationFilter!) {
+        searchPostsOfPublication(
+          first: $first
+          after: $after
+          sortBy: $sortBy
+          filter: $filter
+        ) {
+          edges {
+            node {
+              coverImage {
+                url
+              }
+              id
+              publishedAt
+              slug
+              title
+              brief
+              content {
+                markdown
+                html
+              }
+              tags {
+                name
                 slug
-                title
-                brief
-                content {
-                  markdown
-                  html
-                }
-                tags {
-                  name
-                  slug
-                  id
-                }
+                id
               }
             }
+            cursor
+          }
+          pageInfo {
+            hasNextPage
+            endCursor
           }
         }
       }
     `,
-    variables: {
-      host: serverEnv.HASHNODE_HOST,
-    },
+    variables,
   });
+
   const posts: Array<Post> =
-    publication?.posts?.edges?.map(({ node }: { node: Post }) => node) ?? [];
-  return posts;
+    data?.searchPostsOfPublication?.edges?.map(
+      ({ node }: { node: Post }) => node
+    ) ?? [];
+  const pageInfo = data?.searchPostsOfPublication?.pageInfo;
+  return { posts, pageInfo };
 }
 
 export async function getPostBySlug(slug: string) {

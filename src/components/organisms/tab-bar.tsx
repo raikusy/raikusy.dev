@@ -44,7 +44,7 @@ export function TabBar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex w-full items-center gap-2 p-2 text-sm md:text-base">
+    <div className="flex w-full items-center gap-2 p-2 text-sm md:text-base font-mono">
       {tabs.map((tab) => {
         const isActive = pathname === tab.path;
         return (
@@ -52,17 +52,13 @@ export function TabBar() {
             key={tab.path}
             href={tab.path}
             className={cn(
-              "flex py-2 h-full min-w-[140px] items-center gap-2 justify-center rounded-md hover:bg-hover",
+              "flex p-2 h-full min-w-44 items-center gap-2 justify-center rounded-md hover:bg-hover",
               isActive &&
-                "bg-background text-foreground hover:bg-active-hover font-bold"
+                "bg-background text-foreground hover:bg-active-hover font-semibold"
             )}
           >
             {tab.icon}
             <span className="truncate">{tab.name}</span>
-            <X
-              size={16}
-              className="ml-auto hidden text-[#969696] hover:text-[#e1e1e1] group-hover:block"
-            />
           </Link>
         );
       })}

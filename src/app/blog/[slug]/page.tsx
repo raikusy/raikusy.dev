@@ -1,25 +1,18 @@
 import { Markdown } from "@/components/organisms/markdown";
-import { getPostBySlug } from "@/server/posts";
+import { getPostBySlug, getPosts } from "@/server/posts";
 import dayjs from "dayjs";
 import { CalendarFold } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const runtime = "edge";
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const { posts } = await getPosts();
 
-const notFoundCodes = [
-  {
-    tokens: ["throw ", "new ", "Error(", "'Post not found'", ")", ";"],
-    classNames: [
-      "text-blue-500",
-      "text-yellow-500",
-      "text-red-500",
-      "text-orange-500",
-      "text-red-500",
-      "text-muted-foreground",
-    ],
-  },
-];
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 export default async function BlogPost({
   params,

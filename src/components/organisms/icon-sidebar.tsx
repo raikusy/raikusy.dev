@@ -11,6 +11,7 @@ import {
   MailIcon,
   SearchIcon,
   SettingsIcon,
+  StarIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,6 +22,11 @@ const icons = [
     icon: HomeIcon,
     href: "/",
     label: "Home",
+  },
+  {
+    icon: StarIcon,
+    href: "https://github.com/raikusy/raikusy.dev",
+    label: "Github",
   },
   {
     icon: GithubIcon,
