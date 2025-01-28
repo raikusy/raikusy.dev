@@ -5,19 +5,19 @@ import { CalendarFold } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
-export async function generateStaticParams() {
-  const { posts } = await getPosts();
+// export async function generateStaticParams() {
+//   const { posts } = await getPosts();
 
-  if (!posts) {
-    return [];
-  }
+//   if (!posts) {
+//     return [];
+//   }
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }));
+// }
 
 export default async function BlogPost({
   params,

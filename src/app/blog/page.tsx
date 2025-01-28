@@ -3,6 +3,7 @@ import { Pagination } from "@/components/organisms/pagination";
 import { cn } from "@/lib/utils";
 import { getPosts } from "@/server/posts";
 
+export const runtime = "edge";
 export default async function Blog({
   searchParams,
 }: {
