@@ -5,9 +5,14 @@ import { CalendarFold } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-// Return a list of `params` to populate the [slug] dynamic segment
+// export const runtime = "edge";
+
 export async function generateStaticParams() {
   const { posts } = await getPosts();
+
+  if (!posts) {
+    return [];
+  }
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -19,6 +24,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
+  console.log("params", params);
   const post = await getPostBySlug(params.slug);
 
   if (!post) {

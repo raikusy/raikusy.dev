@@ -6,19 +6,22 @@ import { TabBar } from "@/components/organisms/tab-bar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Header } from "../organisms/header";
 import { LineNumbers } from "../organisms/line-numbers";
+import { Suspense } from "react";
 
 export function ClientLayout({
   children,
   stars,
 }: {
   children: React.ReactNode;
-  stars: number;
+  stars?: number;
 }) {
   return (
     <TooltipProvider>
       <div className="flex min-h-screen flex-col flex-1">
         {/* Header */}
-        <Header stars={stars} />
+        <Suspense>
+          <Header stars={stars ?? 0} />
+        </Suspense>
 
         {/* Main */}
         <div className="flex flex-1 h-full w-full">

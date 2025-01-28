@@ -1,5 +1,4 @@
 "use client";
-import { ClientLayout } from "@/components/layouts/client-layout";
 
 // Error boundaries must be Client Components
 
@@ -14,10 +13,8 @@ export default function GlobalError({
     // global-error must include html and body tags
     <html>
       <body>
-        <ClientLayout>
-          <h2>Something went wrong!</h2>
-          <button onClick={() => reset()}>Try again</button>
-        </ClientLayout>
+        <h2>Something went wrong!</h2>
+        <button onClick={() => reset()}>Try again</button>
       </body>
     </html>
   );

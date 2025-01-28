@@ -1,8 +1,9 @@
 import ArticleCard from "@/components/organisms/article-card";
 import { Pagination } from "@/components/organisms/pagination";
-import type { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getPosts } from "@/server/posts";
+
+export const runtime = "edge";
 
 export default async function Blog({
   searchParams,
