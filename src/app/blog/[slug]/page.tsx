@@ -24,7 +24,6 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  console.log("params", params);
   const post = await getPostBySlug(params.slug);
 
   if (!post) {
