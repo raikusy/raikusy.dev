@@ -1,3 +1,5 @@
+import { setupDevPlatform } from "@cloudflare/next-on-pages/next-dev";
+
 import { fileURLToPath } from "node:url";
 import createJiti from "jiti";
 const jiti = createJiti(fileURLToPath(import.meta.url));
@@ -21,5 +23,9 @@ const nextConfig = {
   },
   transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
 };
+
+if (process.env.NODE_ENV === "development") {
+  await setupDevPlatform();
+}
 
 export default nextConfig;
