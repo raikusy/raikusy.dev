@@ -54,7 +54,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div>
+    <div className="mb-10">
       {/* Projects Section */}
       <div className="space-y-2">
         <span className="text-blue-400">const </span>

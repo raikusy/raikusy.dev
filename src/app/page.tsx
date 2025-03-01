@@ -52,6 +52,10 @@ export default function Home() {
         ],
       },
       {
+        tokens: [""],
+        classNames: [""],
+      },
+      {
         tokens: ["developer.", "name", " = ", '"MD Rakibul Hasan"', ";"],
         classNames: [
           "text-purple-500",
@@ -70,6 +74,10 @@ export default function Home() {
           "text-orange-500",
           "text-muted-foreground",
         ],
+      },
+      {
+        tokens: [""],
+        classNames: [""],
       },
       {
         tokens: [
@@ -105,7 +113,7 @@ export default function Home() {
         <div key={index}>
           {tokens.map((token, index) => (
             <span key={index} className={classNames[index]}>
-              {token}
+              {token ? token : <br />}
             </span>
           ))}
         </div>

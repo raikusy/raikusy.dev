@@ -16,6 +16,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { DiscordIcon } from "../icons/discord-icon";
 
 const icons = [
   {
@@ -39,8 +40,13 @@ const icons = [
     label: "Linkedin",
   },
   {
+    icon: DiscordIcon,
+    href: "https://discordapp.com/users/307469953043398657",
+    label: "Discord",
+  },
+  {
     icon: MailIcon,
-    href: "mailto:raikusy@gmail.com",
+    href: "mailto:ping@raikusy.dev",
     label: "Email",
   },
 ];
@@ -63,7 +69,7 @@ export function IconSidebar() {
                   isActive && "bg-active text-foreground"
                 )}
               >
-                <Icon size={24} />
+                <Icon size={24} className="size-6" />
               </Link>
             </TooltipTrigger>
             <TooltipContent side="right">{label}</TooltipContent>

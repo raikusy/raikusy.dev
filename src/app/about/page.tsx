@@ -145,7 +145,7 @@ export default function About() {
       </div>
 
       {/* Education Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 mb-10">
         <div>
           <span className="text-blue-400">const </span>
           <span className="text-purple-400">education </span>
