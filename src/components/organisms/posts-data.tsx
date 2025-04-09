@@ -26,7 +26,7 @@ export async function PostsData({
               <div
                 key={post.id}
                 className={cn(
-                  "rounded-lg border border-transparent pl-4",
+                  "rounded-lg border border-transparent",
                   "bg-muted/50 hover:border-primary hover:bg-muted"
                 )}
               >

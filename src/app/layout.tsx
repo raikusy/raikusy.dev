@@ -48,7 +48,7 @@ export default async function RootLayout({
           "bg-background text-foreground antialiased flex flex-1 h-screen overflow-y-hidden"
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           <ClientLayout stars={stars}>{children}</ClientLayout>
         </ThemeProvider>
       </body>

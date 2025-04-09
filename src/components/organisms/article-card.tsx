@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 
 const ArticleCard = ({ post }: { post: Post }) => {
   return (
-    <div className="overflow-hidden rounded-md w-full flex h-48">
-      <div className="relative h-48 w-64 overflow-hidden">
+    <div className="overflow-hidden rounded-md w-full flex h-64">
+      <div className="relative h-64 w-72 overflow-hidden">
         <Image
           alt={post.title}
           className="object-cover"

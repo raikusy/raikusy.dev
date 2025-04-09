@@ -64,11 +64,13 @@ export default async function BlogPost({
           <div className="space-y-2">
             <span className="text-purple-400">coverImage</span>
             <span className="text-muted-foreground">: </span>
-            <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
+            <div className="relative h-[600px] w-full overflow-hidden rounded-lg">
               <Image
                 alt={post.title}
                 className="object-cover"
-                fill
+                objectFit="contain"
+                width={1000}
+                height={1000}
                 src={post.coverImage.url}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -81,7 +83,7 @@ export default async function BlogPost({
         <div className="space-y-2">
           <span className="text-purple-400">content</span>
           <span className="text-muted-foreground">: `</span>
-          <div className="pl-4 border border-border rounded-md p-4 my-2">
+          <div className="pl-4 p-4 my-2 w-full">
             <Markdown>{post.content.markdown}</Markdown>
           </div>
           <span className="text-muted-foreground">`,</span>

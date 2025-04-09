@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useFormState } from "react-dom";
+import { ModeToggle } from "../dark-mode-toggle";
 
 export function Header({ stars }: { stars: number }) {
   const searchParams = useSearchParams();
@@ -67,6 +68,7 @@ export function Header({ stars }: { stars: number }) {
           )}
         </form>
       </div>
+      {/* <ModeToggle /> */}
       <Link
         href="https://github.com/raikusy/raikusy.dev"
         className="flex text-sm md:text-base items-center gap-2 ml-auto hover:bg-hover rounded-md p-2"
