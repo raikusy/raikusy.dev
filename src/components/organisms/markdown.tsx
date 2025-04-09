@@ -1,6 +1,6 @@
 "use client";
 
-import { MarkdownHooks, type Options } from "react-markdown";
+import ReactMarkdown, { type Options } from "react-markdown";
 // import remarkGfm from "remark-gfm";
 // import rehypeStarryNight from "rehype-starry-night";
 import Image from "next/image";
@@ -59,7 +59,17 @@ const MarkdownComponents: object = {
     }
     return <p>{paragraph.children}</p>;
   },
-  code({ node, inline, className, ...props }) {
+  code({
+    node,
+    inline,
+    className,
+    ...props
+  }: {
+    node: any;
+    inline: any;
+    className: any;
+    children: any;
+  }) {
     const hasLang = /language-(\w+)/.exec(className || "");
     const hasMeta = node?.data?.meta;
 
@@ -70,7 +80,9 @@ const MarkdownComponents: object = {
         const strlineNumbers = RE?.test(metadata)
           ? RE?.exec(metadata)?.[1]
           : "0";
-        const highlightLines = rangeParser(strlineNumbers);
+        const highlightLines = strlineNumbers
+          ? rangeParser(strlineNumbers)
+          : [];
         const highlight = highlightLines;
         const data = highlight.includes(applyHighlights) ? "highlight" : "";
         return { data };
@@ -106,7 +118,7 @@ export function Markdown({
   options?: Options;
 }) {
   return (
-    <MarkdownHooks
+    <ReactMarkdown
       className="prose dark:prose-invert min-w-full"
       // remarkPlugins={[remarkGfm]}
       // rehypePlugins={[rehypeStarryNight]}
@@ -114,6 +126,6 @@ export function Markdown({
       {...options}
     >
       {children}
-    </MarkdownHooks>
+    </ReactMarkdown>
   );
 }
