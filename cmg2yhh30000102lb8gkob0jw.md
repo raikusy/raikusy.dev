@@ -3,6 +3,7 @@ title: "The Millisecond Check: How Big Tech Verifies Your Username in a Flash"
 datePublished: Sun Sep 28 2025 00:23:02 GMT+0000 (Coordinated Universal Time)
 cuid: cmg2yhh30000102lb8gkob0jw
 slug: the-millisecond-check-how-big-tech-verifies-your-username-in-a-flash
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1759019255214/f179f920-6462-457b-a186-3f5af5ea9af8.png
 tags: redis, typescript, software-engineering, system-design
 
 ---
